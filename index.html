@@ -3,78 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ポートフォリオサイトへようこそ。ここでは静的サイトをNetlifyを使用して無料で公開する方法をブログ形式で紹介しています。">
-    <title>私のポートフォリオ</title>
+    <meta name="description" content="静的サイトをNetlifyを使用して無料で公開する方法を紹介しています。">
+    <title>静的サイトを無料で公開する方法</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
         header {
             background-color: #333;
             color: white;
-            padding: 10px 0;
+            padding: 10px;
             text-align: center;
         }
-        header h1 {
-            margin: 0;
-        }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h2 {
             color: #333;
         }
-        .blog-post {
-            background-color: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        ul li:hover {
+            background-color: #ddd;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        a:hover {
+            color: #007BFF;
         }
         footer {
             text-align: center;
             padding: 10px;
             background-color: #333;
             color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>私のポートフォリオ</h1>
+        <h1>静的サイトを無料で公開する方法</h1>
     </header>
 
     <div class="container">
-        <h2>最新のブログ記事</h2>
-        
-        <div class="blog-post">
-            <h3>静的サイトをNetlifyを使用して無料でインターネット上に公開する方法</h3>
-            <p>静的サイトをインターネット上に公開するのは難しいと思われがちですが、実はNetlifyを使用すると簡単に無料でサイトを公開できます。この記事では、GitHubとNetlifyを連携して、静的サイトを公開する手順を詳しく解説します。</p>
-            
-            <h4>ステップ1: GitHubにプロジェクトを作成する</h4>
-            <p>まず、GitHubアカウントを作成し、リポジトリを作成します。このリポジトリに静的なHTML、CSS、JavaScriptファイルをアップロードします。GitHubは無料でリポジトリをホスティングしてくれるので、最適な選択です。</p>
-
-            <h4>ステップ2: Netlifyアカウントを作成</h4>
-            <p>次に、Netlifyのアカウントを作成し、ダッシュボードにアクセスします。新しいサイトを作成し、GitHubリポジトリを選択することで、簡単にサイトをデプロイできます。</p>
-
-            <h4>ステップ3: デプロイの設定</h4>
-            <p>Netlifyは、リポジトリを監視して自動的に変更を検出し、更新を反映してくれます。サイト名やドメインの設定を行い、「Deploy site」をクリックするだけで、インターネット上に公開されます。</p>
-
-            <h4>まとめ</h4>
-            <p>以上の手順で、簡単に静的サイトをNetlifyを使って無料で公開できます。GitHubとの連携により、コードを管理しながらサイトを運用できるため、初心者にもおすすめの方法です。</p>
-        </div>
+        <h2>目次</h2>
+        <ul>
+            <li><a href="git-installation.html">GitをPCにインストールする方法</a></li>
+            <li><a href="github-account.html">GitHubのアカウントを作成する方法</a></li>
+            <li><a href="github-desktop-install.html">GitHub Desktopをインストールする方法</a></li>
+            <li><a href="github-desktop-usage.html">GitHub Desktopの使用方法</a></li>
+            <li><a href="netlify-account.html">Netlifyのアカウント登録方法</a></li>
+            <li><a href="netlify-deploy.html">NetlifyでHTMLファイルをインターネットに公開する方法</a></li>
+        </ul>
     </div>
 
     <footer>
-        <p>&copy; 2024 私のポートフォリオ - All Rights Reserved</p>
+        <p>&copy; 2024 静的サイト公開ガイド</p>
     </footer>
 </body>
 </html>
