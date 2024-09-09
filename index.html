@@ -162,7 +162,7 @@
         <p>&copy; 2024 静的サイト公開ガイド</p>
     </footer>
 
-    <!-- index.html の JavaScript部分 -->
+    <!-- JavaScriptでNetlify Functionを使ってNewsAPIからデータを取得 -->
     <script>
         async function fetchNews() {
             const response = await fetch('/.netlify/functions/fetchNews');
@@ -181,6 +181,5 @@
 
         fetchNews();
     </script>
-
 </body>
 </html>
