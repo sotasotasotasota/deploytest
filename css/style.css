@@ -4,14 +4,13 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    text-align: left; /* 文字の基本を左揃えに設定 */
 }
 
 header {
     background-color: #333;
     color: white;
     padding: 10px;
-    text-align: center; /* ヘッダーのみ中央揃えを維持 */
+    text-align: center;
 }
 
 .container {
@@ -20,74 +19,56 @@ header {
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     color: #333;
-    text-align: left; /* 見出しも左揃え */
+    margin-bottom: 15px;
 }
 
-/* 番号付きリストのスタイル */
+/* 順番付きリストのスタイル */
 ol {
     padding-left: 20px;
-    margin: 20px 0;
-    counter-reset: list-counter;
+    margin-bottom: 20px;
 }
 
 ol li {
-    background-color: #f0f0f0;
     margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    list-style: none;
-    counter-increment: list-counter;
 }
 
-ol li::before {
-    content: counter(list-counter) ". ";
-    font-weight: bold;
-    color: #007BFF;
-    margin-right: 10px;
-}
-
-/* 順不同リストのスタイル */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-ul li:hover, ol li:hover {
-    background-color: #ddd;
-}
-
+/* リンクのスタイル */
 a {
     text-decoration: none;
-    color: #333;
+    color: #007BFF;
 }
 
 a:hover {
-    color: #007BFF;
+    color: #0056b3;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
+/* ボタンの横並び配置 */
+.button-group {
+    display: flex;
+    justify-content: space-around; /* ボタンを均等に配置 */
+    margin-bottom: 20px;
+}
+
+.button-group a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
     color: white;
-    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* フォームスタイル */
+.button-group a:hover {
+    background-color: #0056b3;
+}
+
+/* フォームのスタイル */
 form {
     margin-top: 20px;
     padding: 20px;
@@ -104,12 +85,12 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    text-align: left; /* フォームのラベルも左揃え */
 }
 
 input[type="text"],
 input[type="email"],
-textarea {
+textarea,
+select {
     width: 100%;
     padding: 10px;
     border-radius: 4px;
@@ -128,9 +109,66 @@ button {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* フッターのスタイル */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* コードブロックのモダンなUIスタイル */
+.code-block {
+    position: relative;
+    background-color: #282c34;  /* 背景色をダークモード風に */
+    color: #ffffff;  /* 文字色を白に */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #444;
+    font-family: 'Courier New', Courier, monospace;  /* 等幅フォント */
+    overflow-x: auto;  /* 横スクロールを許可 */
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #61dafb;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.copy-btn:hover {
+    background-color: #21a1f1;
+}
+
+/* コード内のテキスト */
+pre {
+    margin: 0;
+    font-size: 14px;
+    white-space: pre-wrap;  /* テキストの自動折り返し */
+    word-wrap: break-word;  /* 長い単語を適切に折り返し */
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;  /* 等幅フォント */
+    background-color: rgba(0, 0, 0, 0.1);  /* 背景に透明感を追加 */
+    padding: 2px 4px;
+    border-radius: 4px;
 }
