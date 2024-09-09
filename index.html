@@ -165,9 +165,11 @@
     <!-- JavaScriptでNetlify Functionを使ってNewsAPIからデータを取得 -->
     <script>
         async function fetchNews() {
-            const response = await fetch('/.netlify/functions/fetchNews');
-            const data = await response.json();
-            const newsContainer = document.getElementById('news-container');
+            const response = await fetch('/.netlify/functions/fetchNews'); // Netlify Functionsを呼び出す
+            const data = await response.json(); // レスポンスをJSON形式で取得
+            const newsContainer = document.getElementById('news-container'); // ニュースを表示するコンテナを取得
+        
+            // ニュースの記事を1つずつ追加
             data.articles.forEach(article => {
                 const newsItem = document.createElement('div');
                 newsItem.className = 'news-item';
@@ -175,10 +177,10 @@
                     <a href="${article.url}" target="_blank">${article.title}</a>
                     <p>${article.description || ''}</p>
                 `;
-                newsContainer.appendChild(newsItem);
+                newsContainer.appendChild(newsItem); // コンテナにニュース記事を追加
             });
         }
-
+        // ページ読み込み時にニュースを取得する
         fetchNews();
     </script>
 </body>
