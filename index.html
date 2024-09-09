@@ -5,117 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="静的サイトをNetlifyを使用して無料で公開する方法を紹介しています。">
     <title>静的サイトを無料で公開する方法</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background-color: #f0f0f0;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        ul li:hover {
-            background-color: #ddd;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-        a:hover {
-            color: #007BFF;
-        }
-        .news-container {
-            margin: 20px 0;
-        }
-        .news-item {
-            background-color: #f0f0f0;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .news-item a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .news-item a:hover {
-            color: #007BFF;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            margin-top: 20px;
-        }
-        /* フォームスタイル */
-        form {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        form div {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        textarea {
-            height: 100px;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <!-- 外部CSSファイルを参照 -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -123,11 +14,6 @@
     </header>
 
     <div class="container">
-        <h2>最新のニュース</h2>
-        <div class="news-container" id="news-container">
-            <!-- ここに最新ニュースが表示されます -->
-        </div>
-
         <h2>目次</h2>
         <ul>
             <li><a href="git-installation.html">GitをPCにインストールする方法</a></li>
@@ -161,27 +47,5 @@
     <footer>
         <p>&copy; 2024 静的サイト公開ガイド</p>
     </footer>
-
-    <!-- JavaScriptでNetlify Functionを使ってNewsAPIからデータを取得 -->
-    <script>
-        async function fetchNews() {
-            const response = await fetch('/.netlify/functions/fetchNews'); // Netlify Functionsを呼び出す
-            const data = await response.json(); // レスポンスをJSON形式で取得
-            const newsContainer = document.getElementById('news-container'); // ニュースを表示するコンテナを取得
-        
-            // ニュースの記事を1つずつ追加
-            data.articles.forEach(article => {
-                const newsItem = document.createElement('div');
-                newsItem.className = 'news-item';
-                newsItem.innerHTML = `
-                    <a href="${article.url}" target="_blank">${article.title}</a>
-                    <p>${article.description || ''}</p>
-                `;
-                newsContainer.appendChild(newsItem); // コンテナにニュース記事を追加
-            });
-        }
-        // ページ読み込み時にニュースを取得する
-        fetchNews();
-    </script>
 </body>
 </html>
