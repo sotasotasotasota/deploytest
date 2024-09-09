@@ -50,12 +50,70 @@
         a:hover {
             color: #007BFF;
         }
+        .news-container {
+            margin: 20px 0;
+        }
+        .news-item {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .news-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .news-item a:hover {
+            color: #007BFF;
+        }
         footer {
             text-align: center;
             padding: 10px;
             background-color: #333;
             color: white;
             margin-top: 20px;
+        }
+        /* フォームスタイル */
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -65,6 +123,11 @@
     </header>
 
     <div class="container">
+        <h2>最新のニュース</h2>
+        <div class="news-container" id="news-container">
+            <!-- ここに最新ニュースが表示されます -->
+        </div>
+
         <h2>目次</h2>
         <ul>
             <li><a href="git-installation.html">GitをPCにインストールする方法</a></li>
@@ -74,28 +137,50 @@
             <li><a href="netlify-account.html">Netlifyのアカウント登録方法</a></li>
             <li><a href="netlify-deploy.html">NetlifyでHTMLファイルをインターネットに公開する方法</a></li>
         </ul>
-    </div>
 
-    <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
-        <div>
-          <label for="name">お名前:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-          <label for="email">メールアドレス:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label for="message">メッセージ:</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <div>
-          <button type="submit">送信</button>
-        </div>
-    </form>
+        <!-- 問い合わせフォーム -->
+        <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+            <div>
+                <label for="name">お名前:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">メッセージ:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div>
+                <button type="submit">送信</button>
+            </div>
+        </form>
+    </div>
 
     <footer>
         <p>&copy; 2024 静的サイト公開ガイド</p>
     </footer>
+
+    <!-- index.html の JavaScript部分 -->
+    <script>
+        async function fetchNews() {
+            const response = await fetch('/.netlify/functions/fetchNews');
+            const data = await response.json();
+            const newsContainer = document.getElementById('news-container');
+            data.articles.forEach(article => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+                newsItem.innerHTML = `
+                    <a href="${article.url}" target="_blank">${article.title}</a>
+                    <p>${article.description || ''}</p>
+                `;
+                newsContainer.appendChild(newsItem);
+            });
+        }
+
+        fetchNews();
+    </script>
+
 </body>
 </html>
