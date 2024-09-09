@@ -27,13 +27,11 @@
         <!-- 問い合わせフォーム -->
         <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
             <h2>問い合わせフォーム</h2>
-            <!-- 名前 -->
             <div>
                 <label for="name">お名前:</label>
                 <input type="text" id="name" name="name" required>
             </div>
-        
-            <!-- 問い合わせ分類（プルダウン） -->
+
             <div>
                 <label for="inquiry-type">問い合わせ分類:</label>
                 <select id="inquiry-type" name="inquiry-type" required>
@@ -45,29 +43,28 @@
                     <option value="category5">5. クレーム</option>
                 </select>
             </div>
-        
-            <!-- メールアドレス -->
+
             <div>
                 <label for="email">メールアドレス:</label>
                 <input type="email" id="email" name="email" required>
             </div>
-        
-            <!-- メッセージ -->
+
             <div>
                 <label for="message">メッセージ:</label>
                 <textarea id="message" name="message" required></textarea>
             </div>
-        
-            <!-- 送信ボタン -->
+
             <div>
                 <button type="submit">送信</button>
             </div>
         </form>
-        
     </div>
 
     <footer>
         <p>&copy; 2024 静的サイト公開ガイド</p>
     </footer>
+
+    <!-- 外部JavaScriptファイルを参照 -->
+    <script src="js/script.js"></script>
 </body>
 </html>
