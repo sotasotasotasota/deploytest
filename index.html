@@ -76,6 +76,24 @@
         </ul>
     </div>
 
+    <form name="contact" method="POST" data-netlify="true">
+        <div>
+          <label for="name">お名前:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">メールアドレス:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">メッセージ:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div>
+          <button type="submit">送信</button>
+        </div>
+    </form>
+
     <footer>
         <p>&copy; 2024 静的サイト公開ガイド</p>
     </footer>
