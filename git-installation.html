@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitをPCにインストールする方法</title>
+    <!-- 外部CSSファイルを参照 -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,35 +12,57 @@
         <h1>静的サイト公開手順</h1>
     </header>
 
-    <h1>GitをPCにインストールする方法</h1>
-    <p>Gitは、バージョン管理システムであり、開発者がソースコードを管理するために利用します。</p>
+    <div class="container">
+        <h1>GitをPCにインストールする方法</h1>
+        <p>Gitは、バージョン管理システムであり、開発者がソースコードを管理するために利用します。</p>
+        
+        <hr>
 
-    <h2>1. Gitのダウンロード</h2>
-    <p>まず、公式サイトからGitをダウンロードします。以下のリンクからお使いのOSに合わせたバージョンを選択してください。</p>
-    <ul>
-        <li><a href="https://git-scm.com/download/win" target="_blank">Windows版Git</a></li>
-        <li><a href="https://git-scm.com/download/mac" target="_blank">Mac版Git</a></li>
-    </ul>
+        <h2>1. Gitのダウンロード</h2>
+        <p>まず、公式サイトからGitをダウンロードします。以下のリンクからお使いのOSに合わせたバージョンを選択してください。</p>
+        
+        <!-- ボタンを左右に並べる -->
+        <div class="button-group">
+            <a href="https://git-scm.com/download/win" target="_blank" class="button">Windows版Git</a>
+            <a href="https://git-scm.com/download/mac" target="_blank" class="button">Mac版Git</a>
+        </div>
 
-    <h2>2. Windowsでのインストール</h2>
-    <p>Windowsでは、ダウンロードしたインストーラを実行して、ウィザードに従ってインストールします。</p>
+        <hr>
 
-    <h2>3. Macでのインストール</h2>
-    <p>Macでは、ターミナルを開き、以下のコマンドを実行してGitをインストールできます。</p>
-    <pre><code>brew install git</code></pre>
+        <h2>2. Windowsでのインストール</h2>
+        <p>Windowsでは、ダウンロードしたインストーラを実行して、ウィザードに従ってインストールします。</p>
 
-    <h2>4. Gitの初期設定</h2>
-    <p>インストール後、以下のコマンドでユーザー名とメールアドレスを設定してください。</p>
-    <pre><code>
-git config --global user.name "あなたの名前"
-git config --global user.email "あなたのメールアドレス"
-    </code></pre>
+        <hr>
 
-    <p><a href="index.html">← 戻る</a></p>
-    
+        <h2>3. Macでのインストール</h2>
+        <p>Macでは、ターミナルを開き、以下のコマンドを実行してGitをインストールできます。</p>
+
+        <!-- コードブロック -->
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyToClipboard('#code1')">コピー</button>
+            <pre><code id="code1">brew install git</code></pre>
+        </div>
+
+        <hr>
+
+        <h2>4. Gitの初期設定</h2>
+        <p>インストール後、以下のコマンドでユーザー名とメールアドレスを設定してください。</p>
+
+        <!-- コードブロック -->
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyToClipboard('#code2')">コピー</button>
+            <pre><code id="code2">git config --global user.name "あなたの名前"
+git config --global user.email "あなたのメールアドレス"</code></pre>
+        </div>
+
+        <p><a href="index.html">← 戻る</a></p>
+    </div>
+
     <footer>
         <p>&copy; 2024 静的サイト公開ガイド</p>
     </footer>
-    
+
+    <!-- 外部JavaScriptファイルを参照 -->
+    <script src="js/script.js"></script>
 </body>
 </html>
