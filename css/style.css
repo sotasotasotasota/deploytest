@@ -1,4 +1,4 @@
-/* style.css */
+/* 共通スタイル */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -20,6 +20,7 @@ header {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* これを必要な場所に適用 */
 }
 
 h2 {
